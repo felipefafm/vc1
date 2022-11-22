@@ -5,7 +5,7 @@
 //             <h1>Hola mundo</h1>
 
 //         </nav>
-    
+
 //     )
 // }
 
@@ -58,30 +58,33 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
+import Alert from 'react-bootstrap/Alert'
+import BotonNav from '../BotonNav/BotonNav';
 
 // import logovc from '*.src/components/logovc.png'
 
 function CollapsNav(props) {
-  
-  const handleOnClick=()=>{
+
+  const handleOnClick = () => {
     alert("Aca encontraras lo que buscas")
   }
 
-  const onClick2=()=>{
-    alert('baklsdjlakjsd')
-  }
+ 
 
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-      <img src="./images/logovc.png"  alt="logo" width="100" height="100"  />
+       
+        <img src="./images/logovc.png" alt="logo" width="100" height="100" />
         <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            
-            <Nav.Link href="#cap" func={handleOnClick}>Cap</Nav.Link>
-            <Nav.Link href="#Gorras" func={onClick2}>Gorras</Nav.Link>
+          <BotonNav textoNav="Cap" func={handleOnClick} />
+          <BotonNav textoNav="Gorras" />
+          <BotonNav textoNav="Contacto" />
+            {/* <Nav.Link href="#cap" func={handleOnClick}>Cap</Nav.Link>
+            <Nav.Link href="#Gorras" func={onClick2}>Gorras</Nav.Link> */}
             {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
@@ -95,7 +98,7 @@ function CollapsNav(props) {
             </NavDropdown> */}
           </Nav>
           <Nav>
-           
+
             <CartWidget />
           </Nav>
         </Navbar.Collapse>
