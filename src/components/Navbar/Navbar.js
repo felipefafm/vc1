@@ -5,7 +5,7 @@
 //             <h1>Hola mundo</h1>
 
 //         </nav>
-    
+
 //     )
 // }
 
@@ -57,18 +57,35 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import CartWidget from '../CartWidget/CartWidget';
+import Alert from 'react-bootstrap/Alert'
+import BotonNav from '../BotonNav/BotonNav';
 
-function CollapsNav() {
+// import logovc from '*.src/components/logovc.png'
+
+function CollapsNav(props) {
+
+  const handleOnClick = () => {
+    alert("Aca encontraras lo que buscas")
+  }
+
+ 
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+       
+        <img src="./images/logovc.png" alt="logo" width="100" height="100" />
+        <Navbar.Brand href="#home"></Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#features">Features</Nav.Link>
-            <Nav.Link href="#pricing">Pricing</Nav.Link>
-            <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
+          <BotonNav textoNav="Cap" func={handleOnClick} />
+          <BotonNav textoNav="Gorras" />
+          <BotonNav textoNav="Contacto" />
+            {/* <Nav.Link href="#cap" func={handleOnClick}>Cap</Nav.Link>
+            <Nav.Link href="#Gorras" func={onClick2}>Gorras</Nav.Link> */}
+            {/* <NavDropdown title="Dropdown" id="collasible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">
                 Another action
@@ -78,13 +95,11 @@ function CollapsNav() {
               <NavDropdown.Item href="#action/3.4">
                 Separated link
               </NavDropdown.Item>
-            </NavDropdown>
+            </NavDropdown> */}
           </Nav>
           <Nav>
-            <Nav.Link href="#deets">More deets</Nav.Link>
-            <Nav.Link eventKey={2} href="#memes">
-              Dank memes
-            </Nav.Link>
+
+            <CartWidget />
           </Nav>
         </Navbar.Collapse>
       </Container>
