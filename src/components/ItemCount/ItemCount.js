@@ -2,11 +2,11 @@ import { useState } from "react"
 
 
 
-const ItemCount = ({ initial }) => {
+const ItemCount = ({ initial,stock, onAdd }) => {
 
 
     const [count, setCount] = useState(initial)
-    let stock = 10
+   
 
     const increment = () => {
         if (count < stock) {
@@ -25,11 +25,14 @@ const ItemCount = ({ initial }) => {
     const reset=()=>{
         setCount(0)
     }
+    // const agregarCarrito=()=>{
+
+    // }
 
 
     return (
         <div><h1>{count}</h1>
-            <button onClick={() => increment()}>sumar</button><button onClick={() => rest()}>restar</button><button onClick={()=>reset()}>reset</button></div>
+            <button onClick={() => increment()}>sumar</button><button onClick={() => rest()}>restar</button><button onClick={()=>reset()}>reset</button><button onClick={()=>onAdd(count)}>agregar al carrito</button></div>
     )
 }
 
