@@ -9,6 +9,7 @@ const ItemProductos = ({ productos }) => {
             <h3>Stock</h3>
             <p>{productos.stock}</p>
             <p>{productos.imagen}</p>
+            
 
         </div>
     )
