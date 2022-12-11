@@ -32,7 +32,7 @@ const ItemCount = ({ initial,stock, onAdd }) => {
 
     return (
         <div><h1>{count}</h1>
-            <button onClick={() => increment()}>sumar</button><button onClick={() => rest()}>restar</button><button onClick={()=>reset()}>reset</button><button onClick={()=>onAdd(count)}>agregar al carrito</button></div>
+            <button onClick={() => increment()}>+</button><button onClick={() => rest()}>-</button><button onClick={()=>reset()}>Reset</button><button onClick={()=>onAdd(count)}>Agregar al Carrito</button></div>
     )
 }
 

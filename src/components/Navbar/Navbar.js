@@ -2,17 +2,16 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
-import Alert from 'react-bootstrap/Alert'
-import BotonNav from '../BotonNav/BotonNav';
+// import BotonNav from '../BotonNav/BotonNav';
+import { Link } from 'react-router-dom';
 
 
 function CollapsNav(props) {
 
-  const handleOnClick = () => {
-    alert("Aca encontraras lo que buscas")
-  }
+  // const handleOnClick = () => {
+  //   alert("Aca encontraras lo que buscas")
+  // }
 
  
 
@@ -25,9 +24,10 @@ function CollapsNav(props) {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
-          <BotonNav textoNav="Cap" func={handleOnClick} />
+          <Link as="/">Lista</Link>
+          {/* <BotonNav textoNav="Cap" func={handleOnClick} />
           <BotonNav textoNav="Gorras" />
-          <BotonNav textoNav="Contacto" />
+          <BotonNav textoNav="Contacto" /> */}
            
           </Nav>
           <Nav>
